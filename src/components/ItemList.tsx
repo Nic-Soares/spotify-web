@@ -1,93 +1,56 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCirclePlay} from "@fortawesome/free-solid-svg-icons/faCirclePlay";
+import SingleItem from "./SingleItem";
+import { Link } from "react-router-dom";
 
-const ItemList = () => {
+interface Artist {
+  id: string | number;
+  name: string;
+  image: string;
+  banner: string;
+}
+
+interface Song {
+  id: string | number;
+  name: string;
+  image: string;
+  duration: string;
+  artist: string;
+  audio: string;
+}
+
+interface ItemListProps {
+  title: string;
+  items: number;
+  itemsArray: Artist[] | Song[];
+  path: string;
+  idPath: string;
+}
+
+// const ItemList: React.FC<ItemListProps> = ( {title} ) => {
+
+// const ItemList: React.FC<{ title: string }> = ({ title }) => {
+
+const ItemList: React.FC<ItemListProps> = ( {title, items, itemsArray, path, idPath} ) => {
+  
   return (
     <section className="item-list">
       <div className="item-list__header">
-        <h1>Artistas</h1>
-        <a href="/">
+        <h1>{title} Populares</h1>
+        <Link to={path}>
             <p>Mostrar mais</p>
-        </a>
+        </Link>
       </div>
       
       <div className="item-list__container">
-     
-        <div className="single-item">
-          <div className="single-item__div-image-button">
-            <div className="single-item__div-image">
-              <img src="https://i.scdn.co/image/ab676161000051744dcd8a3bff84cd7703892cf4" alt=""/> 
-            </div>
-            
-            <FontAwesomeIcon className="single-item__icon" icon={faCirclePlay} />
-          </div>
-          
-          <div className="single-item__texts">
-            <p className="single-item__2lines single-item__title">Nome do Artista</p>
-            <p className="single-item__type">Artista</p>
-          </div>
-        </div>
-        
-        <div className="single-item">
-          <div className="single-item__div-image-button">
-            <div className="single-item__div-image">
-              <img src="https://i.scdn.co/image/ab676161000051744dcd8a3bff84cd7703892cf4" alt=""/> 
-            </div>
-            
-            <FontAwesomeIcon className="single-item__icon" icon={faCirclePlay} />
-          </div>
-          
-          <div className="single-item__texts">
-            <p className="single-item__2lines single-item__title">Nome do Artista</p>
-            <p className="single-item__type">Artista</p>
-          </div>
-        </div>
-        
-        <div className="single-item">
-          <div className="single-item__div-image-button">
-            <div className="single-item__div-image">
-              <img src="https://i.scdn.co/image/ab676161000051744dcd8a3bff84cd7703892cf4" alt=""/> 
-            </div>
-            
-            <FontAwesomeIcon className="single-item__icon" icon={faCirclePlay} />
-          </div>
-          
-          <div className="single-item__texts">
-            <p className="single-item__2lines single-item__title">Nome do Artista</p>
-            <p className="single-item__type">Artista</p>
-          </div>
-        </div>
-        
-        <div className="single-item">
-          <div className="single-item__div-image-button">
-            <div className="single-item__div-image">
-              <img src="https://i.scdn.co/image/ab676161000051744dcd8a3bff84cd7703892cf4" alt=""/> 
-            </div>
-            
-            <FontAwesomeIcon className="single-item__icon" icon={faCirclePlay} />
-          </div>
-          
-          <div className="single-item__texts">
-            <p className="single-item__2lines single-item__title">Nome do Artista</p>
-            <p className="single-item__type">Artista</p>
-          </div>
-        </div>
-        
-        <div className="single-item">
-          <div className="single-item__div-image-button">
-            <div className="single-item__div-image">
-              <img src="https://i.scdn.co/image/ab676161000051744dcd8a3bff84cd7703892cf4" alt=""/> 
-            </div>
-            
-            <FontAwesomeIcon className="single-item__icon" icon={faCirclePlay} />
-          </div>
-          
-          <div className="single-item__texts">
-            <p className="single-item__2lines single-item__title">Nome do Artista</p>
-            <p className="single-item__type">Artista</p>
-          </div>
-        </div>
-      
+        {itemsArray
+          .filter((_, index) => index < items)
+          .map((currObj, index) => (
+            <SingleItem 
+              {...currObj} 
+              idPath={idPath} 
+              key={`${title}-${index}`}
+            />
+          ))
+        }
       </div>
       
     </section>
@@ -95,3 +58,6 @@ const ItemList = () => {
 };
 
 export default ItemList;
+
+
+// COMMENTS:

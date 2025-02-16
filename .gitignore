@@ -23,4 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
+#changes.patch
+
 changes.patch
