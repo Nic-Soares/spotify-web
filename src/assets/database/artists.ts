@@ -1,5 +1,4 @@
-
-const artistArray = [
+export const artistsArray = [
   {
     id: 1,
     image: "https://i.scdn.co/image/ab676161000051744dcd8a3bff84cd7703892cf4",
@@ -123,5 +122,3 @@ const artistArray = [
     banner: "https://i.scdn.co/image/ab676186000010169415572375bac1960f9de7e5",
   },
 ];
-
-export default artistArray;

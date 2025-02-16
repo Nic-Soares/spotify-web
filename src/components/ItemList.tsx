@@ -1,5 +1,5 @@
 import SingleItem from "./SingleItem";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 interface Artist {
   id: string | number;
@@ -31,18 +31,29 @@ interface ItemListProps {
 
 const ItemList: React.FC<ItemListProps> = ( {title, items, itemsArray, path, idPath} ) => {
   
+  const { pathname } = useLocation();
+  const isHome = pathname === "/"
+  const finalItems = isHome ? items : Infinity;
+  
+  
   return (
     <section className="item-list">
       <div className="item-list__header">
         <h1>{title} Populares</h1>
-        <Link to={path}>
-            <p>Mostrar mais</p>
-        </Link>
+        
+        {isHome ? (
+          <Link to={path} className="item-list__link">
+              Mostrar mais
+          </Link>
+        ) : (
+          <></>
+        )}
+        
       </div>
       
       <div className="item-list__container">
         {itemsArray
-          .filter((_, index) => index < items)
+          .filter((_, index) => index < finalItems)
           .map((currObj, index) => (
             <SingleItem 
               {...currObj} 
