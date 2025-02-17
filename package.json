@@ -13,5 +13,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "@types/react": "^19.0.9",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react-swc": "^3.8.0",
+    "vite": "^6.1.0"
+  }
 }
