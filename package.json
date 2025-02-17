@@ -7,7 +7,7 @@
     "axios": "^1.7.9"
   },
   "scripts": {
-      "build": "cd back-end && npm install && npm run build && cd ../front-end && npm install && npm install @types/react @types/react-dom && npm run build",
+      "build": "cd back-end && npm install --include=dev && npm run build && cd ../front-end && npm install --include=dev && npm install @types/react @types/react-dom && npm run build",
       "start": "npm run start --prefix back-end"
   },
   "keywords": [],
