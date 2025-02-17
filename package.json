@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
+    "axios": "^1.7.9",
     "typescript": "^5.7.3"
   },
-  "devDependencies": {},
   "scripts": {
-    "build": "npm install --prefix back-end && npm install -prefix front-end && npm run build --prefix front-end",
+    "build": "npm install --prefix back-end && npm install --prefix front-end && npm run build --prefix front-end",
     "start": "npm run start --prefix back-end"
   },
   "keywords": [],
