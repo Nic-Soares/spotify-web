@@ -9,15 +9,15 @@
     "dev": "tsc && node dist/index.js"
   },
   "dependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
     "cors": "^2.8.5",
     "express": "^4.21.2",
     "mongodb": "^6.13.0",
-    "path": "^0.12.7",
-    "@types/cors": "^2.8.17",
-    "@types/express": "^5.0.0",
-    "@types/node": "^22.13.4"
+    "path": "^0.12.7"
   },
   "devDependencies": {
+    "@types/node": "^22.13.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3"
   }

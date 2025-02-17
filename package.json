@@ -6,9 +6,7 @@
     "axios": "^1.7.9"
   },
   "scripts": {
-    "build:frontend": "cd front-end && npm install && npm install --save-dev @types/react @types/react-dom vite @vitejs/plugin-react-swc && npm run build && cd ..",
-    "build:backend": "cd back-end && npm install && npm run build",
-    "build": "npm run build:backend && npm run build:frontend",
+    "build": "cd back-end && npm install && cd ../front-end && npm install && npm run build",
     "start": "npm run start --prefix back-end"
   },
   "keywords": [],
