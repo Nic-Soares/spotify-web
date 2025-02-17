@@ -2,9 +2,13 @@ import express from "express";
 import cors from "cors";
 import { db } from "./connect.js";
 import path from "path";
+import { fileURLToPath } from 'url';
 
 export const createServer = () => {
-  const __dirname = path.resolve();
+  // Obter o caminho do arquivo atual
+  const __filename = fileURLToPath(import.meta.url);
+  // Obter o diretório do arquivo atual
+  const __dirname = path.dirname(__filename);
   
   const app = express();
   const PORT = 3001;
@@ -24,10 +28,13 @@ export const createServer = () => {
     response.send(await db.collection("songs").find({}).toArray());
   });
   
-  app.use(express.static(path.join(__dirname, "../../front-end/dist")));
+  // Ajustando o caminho para subir três níveis (src/api -> back-end -> spotify-web -> front-end)
+  const frontendPath = path.join(__dirname, "../../../front-end/dist");
+  
+  app.use(express.static(frontendPath));
   
   app.get("*", async (request, response) => {
-    response.sendFile(path.join(__dirname, "../../front-end/dist/index.html"))
+    response.sendFile(path.join(frontendPath, "index.html"));
   });
 
   app.listen(PORT, () => {
