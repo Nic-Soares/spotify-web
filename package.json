@@ -9,8 +9,7 @@
     "build:frontend": "cd front-end && npm install && npm install --save-dev @types/react @types/react-dom vite @vitejs/plugin-react-swc && npm run build && cd ..",
     "build:backend": "cd back-end && npm install && npm run build",
     "build": "npm run build:backend && npm run build:frontend",
-    "start": "npm run start --prefix back-end",
-    "dev": "npm run dev --prefix back-end"
+    "start": "npm run start --prefix back-end"
   },
   "keywords": [],
   "author": "",
