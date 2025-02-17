@@ -1,19 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Song } from '../types';
 
-interface SongItemProps {
-  image: string;
-  name: string;
-  duration: string;
-  artist: string;
-  audio: string;
-  id: string | number;
+// Interface para as props do componente
+interface SongItemProps extends Omit<Song, 'audio'> {
   index: number;
 }
 
-const SongItem: React.FC<SongItemProps> = ({ image, name, duration, artist, audio, id, index }) => {
+const SongItem: React.FC<SongItemProps> = ({ 
+  image, 
+  name, 
+  duration,
+  _id, 
+  index 
+}) => {
   return (
-    <Link to={`/song/${id}`} className="song-item">
+    <Link to={`/song/${_id}`} className="song-item">
       <div className="song-item__number-album">
         <p>{index + 1}</p>
 

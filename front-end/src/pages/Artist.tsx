@@ -1,33 +1,26 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
 import { Link, useParams } from "react-router-dom";
-
-// Importações de componentes locais
 import SongList from "../components/SongList";
-
-// Importações de dados/assets
 import { artistsArray } from "../assets/database/artists";
 import { songsArray } from "../assets/database/songs";
+import { Artist as ArtistType, Song } from '../types'; 
 
 const Artist = () => {
-  // Hooks
   const { id } = useParams();
 
-  // Encontrar artista pelo ID
-  const { name, banner } = artistsArray.filter(
-    (currentArtistObj) => currentArtistObj.id === Number(id)
+  const { name, banner } = (artistsArray as ArtistType[]).filter(
+    (currentArtistObj) => currentArtistObj._id === id
   )[0];
 
-  // Filtrar músicas do artista
-  const songsArrayFromArtist = songsArray.filter(
+  const songsArrayFromArtist = (songsArray as Song[]).filter(
     (currentSongObj) => currentSongObj.artist === name
   );
 
-  // Calcular música aleatória
   const randomIndex = Math.floor(
     Math.random() * (songsArrayFromArtist.length - 1)
   );
-  const randomIdFromArtist = songsArrayFromArtist[randomIndex].id;
+  const randomIdFromArtist = songsArrayFromArtist[randomIndex]._id;
 
   return (
     <div className="artist">
@@ -42,6 +35,7 @@ const Artist = () => {
 
       <div className="artist__body">
         <h2>Populares</h2>
+
         <SongList songsArray={songsArrayFromArtist} />
       </div>
 

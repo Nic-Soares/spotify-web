@@ -1,12 +1,13 @@
+import React from "react";
 import ItemList from "./ItemList";
 import { artistsArray } from "../assets/database/artists";
 import { songsArray } from "../assets/database/songs";
 
 interface MainProps {
-  type?: string;
+  type?: "artists" | "songs";
 }
 
-const Main = ({ type }: MainProps) => {
+const Main: React.FC<MainProps> = ({ type }) => {
   return (
     <main className="main">
       {/* Item List de Artistas */}

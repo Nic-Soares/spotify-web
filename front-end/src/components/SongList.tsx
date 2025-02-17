@@ -1,14 +1,6 @@
+import { Song } from '../types';
 import SongItem from "./SongItem";
 import { useState } from "react";
-
-interface Song {
-  id: string | number;
-  name: string;
-  image: string;
-  duration: string;
-  artist: string;
-  audio: string;
-}
 
 interface SongListProps {
   songsArray: Song[];
@@ -22,7 +14,7 @@ const SongList = ({ songsArray }: SongListProps) => {
       {songsArray
         .filter((_, index) => index < items)
         .map((currentSongObj, index) => (
-          <SongItem {...currentSongObj} index={index} key={currentSongObj.id} />
+          <SongItem {...currentSongObj} index={index} key={currentSongObj._id} />
         ))}
       
       <p
