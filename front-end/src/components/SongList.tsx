@@ -1,4 +1,4 @@
-import { Song } from '../types';
+import { Song } from '../@types';
 import SongItem from "./SongItem";
 import { useState } from "react";
 

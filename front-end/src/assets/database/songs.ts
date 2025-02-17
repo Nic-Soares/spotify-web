@@ -1721,7 +1721,7 @@
 //   },
 // ];
 
-import { Song } from '../../types';
+import { Song } from '../../@types';
 import { songsArray as songsArrayFromApi } from "../../../api/api";
 
 // Garante que o array importado está no formato correto

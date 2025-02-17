@@ -1,7 +1,7 @@
 import React from "react";
 import SingleItem from "./SingleItem";
 import { Link, useLocation } from "react-router-dom";
-import { Artist, Song } from "../types";
+import { Artist, Song } from "../@types";
 
 interface ItemListProps {
   title: string;

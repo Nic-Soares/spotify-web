@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Song } from '../types';
+import { Song } from '../@types';
 
 // Interface para as props do componente
 interface SongItemProps extends Omit<Song, 'audio'> {

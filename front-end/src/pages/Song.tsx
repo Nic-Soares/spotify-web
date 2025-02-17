@@ -3,7 +3,7 @@ import Player from "../components/Player";
 import { Link, useParams } from "react-router-dom";
 import { songsArray } from "../assets/database/songs";
 import { artistsArray } from "../assets/database/artists";
-import { Song as SongType } from "../types";
+import { Song as SongType } from "../@types";
 
 const Song: React.FC = () => {
   const { id } = useParams<{ id: string }>();

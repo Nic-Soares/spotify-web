@@ -123,7 +123,7 @@
 //   },
 // ];
 
-import { Artist } from '../../types';
+import { Artist } from '../../@types';
 import { artistsArray as artistsArrayFromApi } from "../../../api/api";
 
 // Garante que o array importado está no formato correto
