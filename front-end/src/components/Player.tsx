@@ -1,4 +1,3 @@
-// spotify-web/front-end/src/components/Player.tsx
 import React, { useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {

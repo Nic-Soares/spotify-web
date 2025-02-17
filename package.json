@@ -3,19 +3,19 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
+    "@types/react": "^19.0.10",
     "axios": "^1.7.9"
   },
-  "scripts": {
-    "build": "cd back-end && npm install && cd ../front-end && npm install && npm run build",
-    "start": "npm run start --prefix back-end"
-  },
+    "scripts": {
+      "build": "cd back-end && npm install --production=false && cd ../front-end && npm install --production=false && npm run build",
+      "start": "npm run start --prefix back-end"
+    },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
     "@types/node": "^22.13.4",
-    "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react-swc": "^3.8.0",
     "typescript": "^5.7.3",
