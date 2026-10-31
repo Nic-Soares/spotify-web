@@ -1,6 +1,8 @@
 import { MongoClient } from "mongodb";
 
-const URI = "mongodb+srv://nicolassoaressantos:5WFoLQxqImaEJmXH@cluster0.h79cg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+// Set MONGODB_URI on Render (Environment) or in a local .env, never in code
+const URI = process.env.MONGODB_URI;
+if (!URI) throw new Error("MONGODB_URI is not set");
 
 const client = new MongoClient(URI);
 
