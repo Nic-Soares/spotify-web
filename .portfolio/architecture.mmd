@@ -1,0 +1,31 @@
+%% Spotify Web: request flow. Source of images/architecture.webp;
+%% re-render it after editing this file.
+flowchart TB
+  browser(["Browser · React 19 SPA<br/>Vite build, React Router"])
+
+  subgraph render[" "]
+    direction LR
+    spa["Static React build<br/>any other route → index.html"]
+    express["Express 4 · TypeScript<br/>on Render, one service"]
+    api["GET /api/artists<br/>GET /api/songs<br/>called by axios on load"]
+    spa ~~~ express ~~~ api
+  end
+
+  media["External media<br/>covers: Spotify CDN · audio: S3"]
+  atlas[("MongoDB Atlas<br/>artists · songs")]
+  seed["insertMany.ts<br/>one-off seed"]
+
+  browser -- "pages" --> express
+  express --> spa
+  express --> api
+  browser --> api
+  browser -- "img · audio" --> media
+  api -- "find({})" --> atlas
+  seed -. "insertMany" .-> atlas
+
+  classDef client fill:#bdece1,stroke:#214e46,color:#1b1c15
+  classDef server fill:#d9eb99,stroke:#566422,color:#1b1c15
+  classDef data fill:#e0e6c3,stroke:#77786a,color:#1b1c15
+  class browser client
+  class spa,express,api server
+  class atlas,media,seed data

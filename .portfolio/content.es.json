@@ -117,8 +117,8 @@
         {
           "type": "image",
           "src": "images/architecture.webp",
-          "alt": "Diagrama de arquitectura: el navegador carga el build de React, que llama a la API de Express; Express lee las colecciones de artistas y canciones de MongoDB Atlas y recurre a index.html para las rutas del lado del cliente",
-          "aspectRatio": "3 / 2"
+          "alt": "Diagrama de arquitectura: el navegador pide las páginas a Express y llama a GET /api/artists y /api/songs con axios al cargar; Express, un único servicio en Render, sirve el build estático de React (cualquier otra ruta recibe index.html) y lee las colecciones de artistas y canciones de MongoDB Atlas, cargadas una vez por un script insertMany. Las portadas vienen del CDN de Spotify y el audio de Amazon S3.",
+          "aspectRatio": "200 / 146"
         },
         {
           "type": "table",
@@ -196,7 +196,7 @@
           "type": "list",
           "items": [
             "Demo en vivo — [spotify-web-ehgp.onrender.com](https://spotify-web-ehgp.onrender.com)",
-            "Código fuente — repositorio en GitHub"
+            "Código fuente — [github.com/Nic-Soares/spotify-web](https://github.com/Nic-Soares/spotify-web)"
           ]
         },
         {
