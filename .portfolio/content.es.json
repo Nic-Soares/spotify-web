@@ -40,7 +40,7 @@
         {
           "type": "intro",
           "id": "role-stack",
-          "text": "Spotify Web es un catálogo y reproductor de música full-stack construido de punta a punta: una biblioteca curada de 20 artistas brasileños y 200 canciones, navegable por artista o por canción, con un reproductor de audio propio. Lo que empezó como un clon solo de front end se reconstruyó alrededor de una API real con Express y MongoDB para practicar la entrega de una porción completa — UI, API, base de datos y despliegue — como un único producto funcional."
+          "text": "Spotify Web es un catálogo y reproductor de música full-stack construido de punta a punta: una biblioteca curada de 20 artistas brasileños y 200 canciones, navegable por artista o por canción, con un reproductor de audio propio. Lo que empezó como un clon solo de front end se reconstruyó alrededor de una API real con Express y MongoDB para practicar la entrega de una porción completa — UI, API, base de datos y despliegue — como un único producto funcional. Es un proyecto de estudio, sin afiliación con Spotify."
         },
         {
           "type": "header",

@@ -40,7 +40,7 @@
         {
           "type": "intro",
           "id": "role-stack",
-          "text": "Spotify Web é um catálogo e player de música full-stack construído de ponta a ponta: uma biblioteca curada de 20 artistas brasileiros e 200 músicas, navegável por artista ou faixa, com um player de áudio próprio para a reprodução. O que começou como um clone só de front end foi reconstruído em torno de uma API real em Express e MongoDB, para praticar a entrega de uma fatia completa — UI, API, banco de dados e deploy — como um único produto funcionando."
+          "text": "Spotify Web é um catálogo e player de música full-stack construído de ponta a ponta: uma biblioteca curada de 20 artistas brasileiros e 200 músicas, navegável por artista ou faixa, com um player de áudio próprio para a reprodução. O que começou como um clone só de front end foi reconstruído em torno de uma API real em Express e MongoDB, para praticar a entrega de uma fatia completa — UI, API, banco de dados e deploy — como um único produto funcionando. É um projeto de estudo, sem afiliação com o Spotify."
         },
         {
           "type": "header",
